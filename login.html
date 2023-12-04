@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/png" href="https://www.bing.com/ck/a?!&&p=75b9163267c9baeaJmltdHM9MTcwMTU2MTYwMCZpZ3VpZD0wNTRlNTFmMi00MWM5LTZhNzgtMDZhMC00MDE4NDA2NDZiNjUmaW5zaWQ9NTYxMw&ptn=3&ver=2&hsh=3&fclid=054e51f2-41c9-6a78-06a0-401840646b65&u=a1L2ltYWdlcy9zZWFyY2g_cT1jYWxjdWxhdG9yIGljb24mRk9STT1JUUZSQkEmaWQ9MDA2MUZBRkIwRjdDNTQ4NzZEQTNFOEU5OUU4Q0NCRjQ1NEY0RTQ5NA&ntb=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body >
+    <section class="h-100 gradient-form" style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100 ">
+            <div class="col-xl-10">
+              <div class="card rounded-3 text-black">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="card-body p-md-5 mx-md-4">
+      
+                      <div class="text-center">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.M7JaF7SPhFcugd0-j55i7AHaHF?w=191&h=183&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                          style="width: 100px; border-radius: 50%;" alt="logo">
+                        <h3 class="mt-1 mb-3 pb-1 text-primary">Money Control</h3>
+                      </div>
+      
+                      <form>                        
+                        <div class="form-outline mb-4">
+                          <input type="text" id="username" class="form-control"
+                            placeholder="Enter User Name" >
+                          
+                        </div>
+      
+                        <div class="form-outline mb-4">
+                          <input type="password" id="userpsw" class="form-control" placeholder="password" >
+                          
+                        </div>
+      
+                        <div class="text-center pt-1 mb-5 pb-1">
+                          <button class="btn btn-primary btn-block fa-lg mb-3 " type="button" onclick="loginPage()"  style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);">Login</button>
+                          <a class="text-muted p-2" href="#!">Forgot password?</a>
+                        </div>
+      
+                        <div class="d-flex align-items-center justify-content-center pb-4">
+                          <p class="mb-0 me-2">Don't have an account?</p>
+                          <a href="./register.html"><button type="button" class="btn btn-outline-danger" onclick="register()">Create new</button></a>
+                        </div>
+      
+                      </form>
+      
+                    </div>
+                  </div>
+                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2" >
+                    <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                      <img src="https://cdn.dribbble.com/users/291221/screenshots/1425333/helper.gif" alt=""width="350px">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</body>
+<script >
+  function loginPage(){
+    
+    userenter=username.value;
+    Userpsw=userpsw.value;
+    let store=JSON.parse(localStorage.getItem(userenter))
+    console.log(store);
+    if (username.value==""|| userpsw.value=="") {
+        alert('Enter complete details')
+    } else if (username.value in localStorage) {
+        if (userpsw.value==store.psw ) {
+            alert('Login successfull')
+            window.location=`./home.html`
+            } else {
+                alert('Your username and password are not match')
+            }
+        } else {
+            alert(`Sorry ,we can't access your details.\nplease register your details by clicking create new button below!`)
+        }
+        
+        
+    }
+    
+
+ 
+</script>
+</html>
